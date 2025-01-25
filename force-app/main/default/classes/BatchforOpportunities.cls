@@ -1,7 +1,7 @@
 public class BatchforOpportunities implements Database.Batchable<sobject> {
 
     public Database.QueryLocator start(Database.BatchableContext BC) {
-        system.debug('start method Called');
+        system.debug('start method Called - updated');
         String query='SELECT Id, Name, StageName FROM Opportunity WHERE StageName=\'Closed won\' AND CloseDate < Last_N_Days';
         return Database.getQueryLocator(query);
 
